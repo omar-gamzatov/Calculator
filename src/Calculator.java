@@ -7,30 +7,28 @@ public class Calculator {
 
     private String a, b;
     private int numA, numB;
-    private final String expression;
+    private String expression;
     private String action;
     private final Properties prop;
-    public boolean flag;
 
 
 
-    Calculator(String expression) throws IOException {
+    Calculator() throws IOException {
         this.prop = new Properties();
         this.prop.load(Main.class.getClassLoader().getResourceAsStream("calc.properties"));
         System.out.println(this.prop.getProperty("welcome"));
-        this.expression = expression;
-        actionLoop();
     }
 
-    public void actionLoop() {
-        findAction();
+    public void calculate(String expression) {
+        this.expression = expression;
+        defineOperation();
         splitExpression();
         parseNumbers();
         getResult();
     }
 
-    public void findAction() {
-        if (this.expression.contains("+"))
+    public void defineOperation() {
+        if (this.expression.contains("+")) //
             this.action = "\\+";
         else if (this.expression.contains("-"))
             this.action = "\\-";
