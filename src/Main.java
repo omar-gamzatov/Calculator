@@ -1,12 +1,13 @@
+import romanNumerals.RomanNumerals;
+
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        Calculator calculator = new Calculator();
-        String a  = scanner.next();
-        calculator.calculate(a);
+    public static void main(String[] args) throws IOException, CalcException {
+//        Calculator calculator = new Calculator();
+//        calculator.calculate();
+
+        System.out.println(RomanNumerals.valueOf("6"));
     }
 }

@@ -1,30 +1,33 @@
 package romanNumerals;
 
-public enum RomanNumerals {
-    I("I", 1),
-    II("II", 2),
-    III("III", 3),
-    IV("IV", 4),
-    V("V", 5),
-    VI("VI", 6),
-    VII("VII", 7),
-    VIII("VIII", 8),
-    IX("IX", 9),
-    X("X", 10);
+public class RomanNumerals {
 
+    private Map<Integer, String> map =
+    I("1", "I"),
+    II("2", "II"),
+    III("3", "III"),
+    IV("4", "IV"),
+    V("5", "V"),
+    VI("6", "VI"),
+    VII("7", "VII"),
+    VIII("8", "VIII"),
+    IX("9", "IX"),
+    X("10", "X"),
+    L("50", "L"),
+    C("100", "C");
     private final String RomanNumeral;
-    private final int ArabicEquivalent;
+    private final String ArabicEquivalent;
 
-    RomanNumerals(String RomanNumeral, int ArabicEquivalent) {
+    RomanNumerals(String ArabicEquivalent, String RomanNumeral) {
         this.ArabicEquivalent = ArabicEquivalent;
         this.RomanNumeral = RomanNumeral;
     }
 
-    public int getArabicEquivalent() {
+    public String getArabicEquivalent() {
         return ArabicEquivalent;
     }
 
     public String getRomanNumeral() {
-        return RomanNumeral;
+        return RomanNumeral+1;
     }
 }
